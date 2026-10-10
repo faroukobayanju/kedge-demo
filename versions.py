@@ -1,5 +1,5 @@
 """Tiny release helper: sort and pick version strings, including odd legacy tags."""
-from packaging.version import LegacyVersion, Version, parse
+from packaging.version import Version, parse
 
 
 def is_legacy(tag: str) -> bool:

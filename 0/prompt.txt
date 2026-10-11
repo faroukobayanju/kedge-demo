@@ -1,0 +1,43 @@
+"You are fixing a failing dependency-bump PR.
+PR: build(deps): bump packaging from 21.3 to 24.2
+Plan: packaging 24.2 removed LegacyVersion (deprecated since 21.0, dropped in 22.0); versions.py imports it directly and must be updated to use only Version and parse
+Only edit files matching: ['versions.py']
+Failure output:
+Local test output:
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_sorting.py ____________________
+ImportError while importing test module '/private/var/folders/y2/dkktgsbx7h31xfs1460163j40000gn/T/kedge/20261011-1331-8f97/tests/test_sorting.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_sorting.py:1: in <module>
+    from versions import latest, sort_tags
+versions.py:2: in <module>
+    from packaging.version import LegacyVersion, Version, parse
+E   ImportError: cannot import name 'LegacyVersion' from 'packaging.version' (/Users/zorak/Documents/kedge/.tools/opencode/cache/uv/archive-v0/tz1PI4SUT0huDoU7ZnmG5/lib/python3.12/site-packages/packaging/version.py)
+___________________ ERROR collecting tests/test_versions.py ____________________
+ImportError while importing test module '/private/var/folders/y2/dkktgsbx7h31xfs1460163j40000gn/T/kedge/20261011-1331-8f97/tests/test_versions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_versions.py:1: in <module>
+    from versions import is_legacy
+versions.py:2: in <module>
+    from packaging.version import LegacyVersion, Version, parse
+E   ImportError: cannot import name 'LegacyVersion' from 'packaging.version' (/Users/zorak/Documents/kedge/.tools/opencode/cache/uv/archive-v0/tz1PI4SUT0huDoU7ZnmG5/lib/python3.12/site-packages/packaging/version.py)
+=========================== short test summary info ============================
+ERROR tests/test_sorting.py
+ERROR tests/test_versions.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 0.09s
+Do ONE step toward making the tests pass, then stop. Never delete or skip tests.
+LESSON FROM PAST RUNS: Only edit files matching: ['versions.py', 'requirements.txt']. You edited: ['tests/test_sorting.py', 'versions.py'].
+LESSON FROM PAST RUNS: Only edit files matching: ['versions.py', 'requirements.txt']. You edited: ['tests/test_sorting.py', 'versions.py'].
+LESSON FROM PAST RUNS: Previous attempt reduced passing/total tests. Do not delete or skip tests.
+CURRENT PLAN STEP: 1. Remove LegacyVersion from the import in versions.py
+RECOVERY NOTE: Previous attempt reduced passing/total tests. Do not delete or skip tests."

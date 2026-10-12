@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QKNYAZ74A332PVSK1TGZ8W",
+  "session_id": "ses_ed0c5adbeffeLBHd72MC7n7kFr",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T08:29:17.476612Z",
+  "branch": "dependabot/pip/packaging-24.2",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "versions.py"
+  ],
+  "agent": "OpenCode",
+  "model": "claude-haiku",
+  "turn_id": "92a565d9cf6d",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 25144,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 49325,
+    "output_tokens": 423,
+    "api_call_count": 3
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T08:29:17.473943Z",
+    "agent_lines": 8,
+    "agent_removed": 2,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 8,
+    "total_lines_changed": 10,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 269,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".opencode/plugins/entire.ts": 269
+      }
+    }
+  ]
+}

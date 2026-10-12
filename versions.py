@@ -1,9 +1,15 @@
 """Tiny release helper: sort and pick version strings, including odd legacy tags."""
-from packaging.version import LegacyVersion, Version, parse
+from packaging.version import InvalidVersion, Version, parse
 
 
 def is_legacy(tag: str) -> bool:
-    return isinstance(parse(tag), LegacyVersion)
+    # LegacyVersion was removed in packaging 24.0+
+    # Legacy versions are now detected as invalid versions
+    try:
+        parse(tag)
+        return False
+    except InvalidVersion:
+        return True
 
 
 def latest(tags: list[str]) -> str:
